@@ -7,7 +7,12 @@ public class PlayerController : MonoBehaviour
 {
     CharacterController characterController;
 
-    public float moveSpeed = 5.0f;
+    public float moveSpeed = 15f;
+    public float accelerationRate = 2f;
+    public float decelerationFactor = 0.8f;
+    public Boolean inertial = true;
+
+    private Vector3 currentSpeed = new Vector3(0.0f, 0.0f, 0.0f);
 
     public enum ControllerType { WASD, ARROW_KEYS, CONTROLLER1, CONTROLLER2 };
     public ControllerType controller;
@@ -18,9 +23,11 @@ public class PlayerController : MonoBehaviour
 
     public float gravity = -9.81f;
 
+
+
     void Start()
     {
-        switch(controller)
+        switch (controller)
         {
             case ControllerType.WASD:
                 xAxis = "WASDHorizontal";
@@ -68,14 +75,32 @@ public class PlayerController : MonoBehaviour
 
     void ApplyTranslation(float horizontalInput, float verticalInput)
     {
-        Vector3 movement = new Vector3(horizontalInput, ((characterController.isGrounded) ? 0 : (float)gravity * Time.deltaTime), verticalInput);
-        Vector3 scaledMovement = movement.normalized * moveSpeed * Time.deltaTime;
 
-        characterController.Move(scaledMovement);
+        Vector3 appliedSpeed = new Vector3(moveSpeed, moveSpeed, moveSpeed);
+        if (inertial)
+        {
+            appliedSpeed = new Vector3((float)(currentSpeed.x + accelerationRate * Time.deltaTime * (horizontalInput) - (currentSpeed.x * decelerationFactor * accelerationRate * Time.deltaTime)),
+                ((characterController.isGrounded) ? 0 : (float)gravity * Time.deltaTime),
+                (float)(currentSpeed.z + accelerationRate * Time.deltaTime * verticalInput - (currentSpeed.z * decelerationFactor * accelerationRate * Time.deltaTime)));
+            currentSpeed = appliedSpeed;
 
-        if (!(horizontalInput == 0 && verticalInput == 0))
-            ApplyRotation(movement);
-        
+
+            Vector3 scaledMovement = appliedSpeed;
+
+            characterController.Move(scaledMovement);
+            if (!(horizontalInput == 0 && verticalInput == 0))
+                ApplyRotation(scaledMovement);
+        }
+        else
+        {
+            Vector3 movement = new Vector3(horizontalInput, ((characterController.isGrounded) ? 0 : (float)gravity * Time.deltaTime), verticalInput);
+            Vector3 scaledMovement = movement.normalized * moveSpeed * Time.deltaTime;
+
+            characterController.Move(scaledMovement);
+            if (!(horizontalInput == 0 && verticalInput == 0))
+                ApplyRotation(movement);
+        }
+
     }
 
     void ApplyRotation(Vector3 movement)
