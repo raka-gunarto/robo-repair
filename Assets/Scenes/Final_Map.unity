@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.061481766, g: 0.084273286, b: 0.12794101, a: 1}
+  m_IndirectSpecularColor: {r: 0.061438717, g: 0.08421308, b: 0.12785137, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1888,12 +1888,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnablePrefabs:
-  - {fileID: 100000, guid: 82b989f27f76a514fb6aa15617dd0f26, type: 3}
-  - {fileID: 100000, guid: fb6dfc01de726104899a8478f9f1af68, type: 3}
-  - {fileID: 100000, guid: f89277d2eabcd4142a73c21567865c0e, type: 3}
-  - {fileID: 100000, guid: 1b2d3e61ea4c0514a8d53a51c18eb42d, type: 3}
-  - {fileID: 100000, guid: 2a9ade62588237e48ba9ac288d95c756, type: 3}
-  - {fileID: 100000, guid: 97779d27f1619b04fb720a209d13a618, type: 3}
+  - {fileID: 4179761277840004428, guid: e8906ad48ecdae84cb52972f50713a51, type: 3}
+  - {fileID: 6823562125479108555, guid: b2342fca463527e4a9381719bc7489e9, type: 3}
+  - {fileID: 6547583464379878786, guid: c13f389ef3b8869468a365b0b6186db0, type: 3}
+  - {fileID: 4724528255691452301, guid: 5ab2bd0bbe112144d9b24aac755700cd, type: 3}
+  - {fileID: 6377425714269324016, guid: 6689cd03d5091eb40b55d246b5742e79, type: 3}
+  - {fileID: 1488697949347698717, guid: 696ce35a9d4457343ba87b92e6b30291, type: 3}
   NumberToSpawn: 50
   ScaleMin: 0.5
   ScaleMax: 1
@@ -1927,10 +1927,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnablePrefabs:
-  - {fileID: 100000, guid: f1574214e4e2fba4294b963cdd9fc0ac, type: 3}
-  - {fileID: 100000, guid: 7569814dc0c6a0a409d3fc1e8d3be730, type: 3}
-  - {fileID: 100000, guid: c0f024ec08c8e004baf7d14a5be8e608, type: 3}
-  - {fileID: 100000, guid: 67505b1cbd96ede4f8f62a06d5789ad4, type: 3}
+  - {fileID: 6032240301379146246, guid: 00635de456d4b584fae8bdbc75ddb98b, type: 3}
+  - {fileID: 6351269601784795294, guid: 00be3b1bce4a138469eb90097a0a8b0e, type: 3}
+  - {fileID: 3081101376572126336, guid: cb1521fe015b45841a8374cf1c8fd227, type: 3}
+  - {fileID: 2840136780607377488, guid: f71e04dd39f3f0c4b8fd6060a09841a6, type: 3}
   NumberToSpawn: 20
   ScaleMin: 0.8
   ScaleMax: 1
