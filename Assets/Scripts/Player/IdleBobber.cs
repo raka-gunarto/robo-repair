@@ -19,9 +19,9 @@ public class IdleBobber : MonoBehaviour
         {
             LastTransform = transform.localPosition;
             if (Up)
-                TargetTransform = new Vector3(transform.localPosition.x, transform.localPosition.y + 0.1f, transform.localPosition.z);
+                TargetTransform = new Vector3(transform.localPosition.x, transform.localPosition.y + 0.3f, transform.localPosition.z);
             else
-                TargetTransform = new Vector3(transform.localPosition.x, transform.localPosition.y - 0.1f, transform.localPosition.z);
+                TargetTransform = new Vector3(transform.localPosition.x, transform.localPosition.y - 0.3f, transform.localPosition.z);
             Up = !Up;
             LerpFrac = 0.0f;
         }

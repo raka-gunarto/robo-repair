@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.056233324, g: 0.079379186, b: 0.12584744, a: 1}
+  m_IndirectSpecularColor: {r: 0.068276666, g: 0.09002189, b: 0.13335134, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -287,11 +287,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: -44.76
+  near clip plane: -37.6
   far clip plane: 1014.8
-  field of view: 60
+  field of view: 43
   orthographic: 1
-  orthographic size: 60
+  orthographic size: 30
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -314,13 +314,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246787743}
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 2.4, y: 42.2, z: -39.6}
+  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
+  m_LocalPosition: {x: 2.4, y: 26.93, z: -39.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!114 &246787748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,7 +401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plane: {fileID: 364588732}
   spawnablePrefab: {fileID: 100000, guid: 2066d949f81717f46b8e34a46056429f, type: 3}
-  NumberToSpawn: 20
+  NumberToSpawn: 100
   ScaleMin: 1
   ScaleMax: 1
 --- !u!4 &364588732 stripped
@@ -562,6 +562,25 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
+--- !u!1 &885214459 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1762905490953995514, guid: bc0957861fb5d7a4d8bc35430d050fb2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1667592607}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &885214461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885214459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a49d93b3ca67b84a9facbaf534e69aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BobbingSpeed: 1
 --- !u!1001 &1321804136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -742,6 +761,11 @@ PrefabInstance:
         type: 3}
       propertyPath: moveSpeed
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762905492092631664, guid: bc0957861fb5d7a4d8bc35430d050fb2,
+        type: 3}
+      propertyPath: gravity
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 1762905492092631667, guid: bc0957861fb5d7a4d8bc35430d050fb2,
         type: 3}
