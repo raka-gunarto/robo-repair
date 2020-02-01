@@ -1,20 +1,15 @@
 fileFormatVersion: 2
-guid: 92732ec273268cc43982e36a2ae6a13e
+guid: 7eba67ac2cce19f48adec8993b9a2ebc
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
+    2100000: No Name
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Floor
-    6400000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: e58f9baed30883c4da1007f9617ded2d, type: 2}
+    4300000: Floor.001
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -42,7 +37,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1

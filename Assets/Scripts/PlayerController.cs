@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
     {
         if (movement == new Vector3(0, 0, 0))
             return;
+        movement.y = 0;
         Quaternion rot = new Quaternion();
         rot.SetLookRotation(movement);
         transform.rotation = rot;
