@@ -902,7 +902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  controllerNumber: 1
+  controller: 2
 --- !u!136 &895059418
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1780,7 +1780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  controllerNumber: 2
+  controller: 3
 --- !u!136 &1529708592
 CapsuleCollider:
   m_ObjectHideFlags: 0
