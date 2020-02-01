@@ -48,6 +48,14 @@ ModelImporter:
     4300010: Cube.006
     4300012: Cylinder.009
     4300014: Elbow Joint.000
+    6400000: Cube.001
+    6400002: Cube.002
+    6400004: Cube.004
+    6400006: Cube.005
+    6400008: Cube.006
+    6400010: Cylinder.008
+    6400012: Cylinder.009
+    6400014: Elbow Joint.000
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -96,7 +104,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 0
     importBlendShapes: 1

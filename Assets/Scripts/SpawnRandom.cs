@@ -5,9 +5,9 @@ using UnityEngine;
 public class SpawnRandom : MonoBehaviour
 {
 
- public Transform plane;
- public GameObject spawnablePrefab;
- public static GameObject[] terrainPrefabs;
+ //public Transform plane;
+ public GameObject[] spawnablePrefabs;
+ //public static GameObject[] terrainPrefabs;
 
  
  public int NumberToSpawn;
@@ -19,7 +19,7 @@ public class SpawnRandom : MonoBehaviour
  int NumberSpawned = 0;
 
  void Start () {
-    terrainPrefabs = Resources.LoadAll<GameObject>("Terrain");
+    //terrainPrefabs = Resources.LoadAll<GameObject>("Terrain");
     Mesh _mesh = transform.GetComponent<MeshFilter> ().mesh;
     x_dim = _mesh.bounds.size.x;
     z_dim = _mesh.bounds.size.z;
@@ -27,7 +27,7 @@ public class SpawnRandom : MonoBehaviour
 
  void Update(){
          if (NumberSpawned < NumberToSpawn){
-             SpawnInside (terrainPrefabs[Random.Range(0, terrainPrefabs.Length - 1)]);
+             SpawnInside(spawnablePrefabs[Random.Range(0, spawnablePrefabs.Length - 1)]);
              NumberSpawned++;
          }
      }

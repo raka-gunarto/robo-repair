@@ -1,14 +1,61 @@
 fileFormatVersion: 2
-guid: 34f3f0fc1c294984e9700ce526f62223
+guid: e5e06dfcc32eb254bb8e0643f618a972
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Rock_02
-    6400000: //RootNode
+    100000: Cube.000
+    100002: Cube.001
+    100004: Cube.002
+    100006: Cube.003
+    100008: Cube.004
+    100010: Cube.011
+    100012: Cube.012
+    100014: Cube.013
+    100016: Cube.014
+    100018: //RootNode
+    100020: Cube.005
+    400000: Cube.000
+    400002: Cube.001
+    400004: Cube.002
+    400006: Cube.003
+    400008: Cube.004
+    400010: Cube.011
+    400012: Cube.012
+    400014: Cube.013
+    400016: Cube.014
+    400018: //RootNode
+    400020: Cube.005
+    2100000: No Name
+    2300000: Cube.000
+    2300002: Cube.001
+    2300004: Cube.002
+    2300006: Cube.003
+    2300008: Cube.004
+    2300010: Cube.011
+    2300012: Cube.012
+    2300014: Cube.013
+    2300016: Cube.014
+    2300018: Cube.005
+    3300000: Cube.000
+    3300002: Cube.001
+    3300004: Cube.002
+    3300006: Cube.003
+    3300008: Cube.004
+    3300010: Cube.011
+    3300012: Cube.012
+    3300014: Cube.013
+    3300016: Cube.014
+    3300018: Cube.005
+    4300000: Cube.001
+    4300002: Cube.000
+    4300004: Cube.002
+    4300006: Cube.003
+    4300008: Cube.004
+    4300010: Cube.011
+    4300012: Cube.012
+    4300014: Cube.013
+    4300016: Cube.014
+    4300018: Cube.005
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -42,12 +89,12 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 0
     importBlendShapes: 1
