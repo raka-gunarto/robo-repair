@@ -11,6 +11,8 @@ public class ProgressCircle : MonoBehaviour
     private Color intermediate   = new Color(0.749f, 0.569f, 0.024f);
     private Color final          = new Color(0.184f, 0.749f, 0.306f);
 
+    public PlayerController owner;
+
     private UnityEngine.UI.Image image;
 
     // Start is called before the first frame update
@@ -25,7 +27,8 @@ public class ProgressCircle : MonoBehaviour
         image = GetComponent<UnityEngine.UI.Image>();
 
         if ((image.fillAmount + Time.deltaTime * rate) > 1)
-            image.fillAmount--;
+            owner.finishMining();
+
         image.fillAmount += Time.deltaTime * rate;
 
         image.color = initial;
