@@ -25,7 +25,7 @@ public class InventoryManager : MonoBehaviour
         obj.transform.parent = character.transform;
         obj.transform.localPosition = new Vector3 (0,0,0);
         Vector3 diff = (character.transform.position) + (obj.transform.position) * inventory.Count;
-        obj.transform.localPosition.y = diff.y;
+        obj.transform.localPosition = new Vector3(obj.transform.localPosition.x, diff.y, obj.transform.localPosition.z)
         inventory.Add(obj);
     }
 
