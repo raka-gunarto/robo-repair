@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     CharacterController characterController;
 
     public float moveSpeed = 5.0f;
+    public float gravity = -9.81f;
+
     void Start()
     {
         print(transform.rotation);
@@ -30,16 +32,14 @@ public class PlayerController : MonoBehaviour
 
     void ApplyTranslation(float horizontalInput, float verticalInput)
     {
-        if (horizontalInput == 0 && verticalInput == 0)
-            return;
-
-        Vector3 movement = new Vector3(horizontalInput, ((characterController.isGrounded) ? 0 : (float)-9.81 * Time.deltaTime), verticalInput);
-        Vector3 scaledMovement = movement.normalized;
-        scaledMovement = movement * moveSpeed * Time.deltaTime;
+        Vector3 movement = new Vector3(horizontalInput, ((characterController.isGrounded) ? 0 : (float)gravity * Time.deltaTime), verticalInput);
+        Vector3 scaledMovement = movement.normalized * moveSpeed * Time.deltaTime;
 
         characterController.Move(scaledMovement);
 
-        ApplyRotation(movement);
+        if (!(horizontalInput == 0 && verticalInput == 0))
+            ApplyRotation(movement);
+        
     }
 
     void ApplyRotation(Vector3 movement)
