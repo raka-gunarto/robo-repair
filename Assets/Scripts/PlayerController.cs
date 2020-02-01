@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,12 +22,19 @@ public class PlayerController : MonoBehaviour
     private string yAxis;
     private string trigger;
 
-    public float gravity = -9.81f;
+    public float miningRadius = 1.5f;
+    private bool isMining = false;
+    private GameObject target;
+    private GameObject guiElement;
 
+    private Sprite progressCircle;
 
+    public float gravity = -100f;
 
     void Start()
     {
+        progressCircle = Resources.Load<Sprite>("ProgressCircle");
+
         switch (controller)
         {
             case ControllerType.WASD:
@@ -53,16 +61,70 @@ public class PlayerController : MonoBehaviour
                 break;
         }
 
-        print(transform.rotation);
         characterController = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        ProcessMovementInputs();
+        if(!isMining)
+        {
+            ProcessMovementInputs();
+        }
 
-        print("Controller " + controller.ToString() + " VALUE: " + Input.GetAxis(trigger).ToString());
+        if (Input.GetAxis(trigger) == 1 && !isMining)
+        {
+
+            isMining = true;
+
+            print("Looking for mineable");
+            target = findClosestMineable();
+            if (target)
+            {
+                print("Found mineable!");
+
+                guiElement = new GameObject("Target");
+                guiElement.transform.SetParent(GameObject.Find("Canvas").transform);
+                ProgressCircle progressCircleComponent = guiElement.AddComponent<ProgressCircle>();
+                progressCircleComponent.owner = this;
+                guiElement.transform.localScale = new Vector3(0.2f, 0.2f, 1);
+                Image image = guiElement.AddComponent<Image>();
+                image.fillAmount = 0;
+                image.sprite = progressCircle;
+                image.type = Image.Type.Filled;
+                image.fillOrigin = 2;
+                
+                GUIHover hover = target.AddComponent<GUIHover>();
+                hover.image = image;
+            }
+        }
+        else if(isMining && Input.GetAxis(trigger) != 1)
+        {
+            isMining = false;
+            Destroy(guiElement);
+        }
+        
+    }
+
+    public void finishMining()
+    {
+        isMining = false;
+        Destroy(guiElement);
+        GetComponent<InventoryManager>().add(target);
+    }
+
+    GameObject findClosestMineable()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(gameObject.transform.position, miningRadius);
+        for(int i = 0; i < hitColliders.Length; i++)
+        {
+            if(hitColliders[i].GetComponent<Mineable>())
+            {
+                return hitColliders[i].gameObject;
+            }
+        }
+
+        return null;
     }
 
     void ProcessMovementInputs()
