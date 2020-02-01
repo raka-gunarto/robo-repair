@@ -18,13 +18,6 @@ public class PlayerController : MonoBehaviour
 
     public float gravity = -9.81f;
 
-    public enum ControllerType { WASD, ARROW_KEYS, CONTROLLER1, CONTROLLER2 };
-    public ControllerType controller;
-
-    private string xAxis;
-    private string yAxis;
-    private string trigger;
-
     void Start()
     {
         switch(controller)
