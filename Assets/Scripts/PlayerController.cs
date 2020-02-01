@@ -20,12 +20,14 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         ProcessMovementInputs();
+
+        print("Controller " + controllerNumber + " VALUE: " + Input.GetAxis("Controller" + controllerNumber + "Trigger").ToString());
     }
 
     void ProcessMovementInputs()
     {
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        float verticalInput = Input.GetAxisRaw("Vertical");
+        float horizontalInput = Input.GetAxisRaw("Controller" + controllerNumber + "Horizontal");
+        float verticalInput = Input.GetAxisRaw("Controller" + controllerNumber + "Vertical");
 
         ApplyTranslation(horizontalInput, verticalInput);
     }
