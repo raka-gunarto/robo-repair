@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 11a2d9ffe0fe2344f89d4ba569173e9a
+guid: 6b5616c338ef4f546b94dd52d2e25cb7
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
+    2100000: Colour
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Rock_03
-    6400000: //RootNode
+    4300000: Cube.007
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: No Name
+      name: Colour
     second: {fileID: 2100000, guid: c611155e2634f7848bcc2d9b4d34d14a, type: 2}
   materials:
     importMaterials: 1
@@ -42,12 +42,12 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 0
     importBlendShapes: 1

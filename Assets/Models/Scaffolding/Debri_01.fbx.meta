@@ -1,25 +1,20 @@
 fileFormatVersion: 2
-guid: 045b78238558b1943bf60df306c7f168
+guid: 9ba0ecac84cf6e642b44b766a4456e0a
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
+    2100000: Colour
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Tree_02
-    6400000: //RootNode
+    4300000: Cube.009
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Leaves
-    second: {fileID: 2100000, guid: 9159469c248171548a715b2bed00fe7b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Wood
-    second: {fileID: 2100000, guid: 86bde1cef42534746a085a9a5b51b94f, type: 2}
+      name: Colour
+    second: {fileID: 2100000, guid: 86ba3980919783445be936fd38a6fb30, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -47,14 +42,14 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
-    importVisibility: 0
+    importVisibility: 1
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
