@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     private string yAxis;
     private string trigger;
 
+    public float gravity = -9.81f;
+
     void Start()
     {
         switch(controller)
@@ -66,21 +68,23 @@ public class PlayerController : MonoBehaviour
 
     void ApplyTranslation(float horizontalInput, float verticalInput)
     {
-        Vector3 movement = new Vector3(horizontalInput, 0, verticalInput);
-        Vector3 scaledMovement = movement.normalized;
-        scaledMovement = movement * moveSpeed * Time.deltaTime;
+        Vector3 movement = new Vector3(horizontalInput, ((characterController.isGrounded) ? 0 : (float)gravity * Time.deltaTime), verticalInput);
+        Vector3 scaledMovement = movement.normalized * moveSpeed * Time.deltaTime;
 
         characterController.Move(scaledMovement);
 
-        ApplyRotation(movement);
+        if (!(horizontalInput == 0 && verticalInput == 0))
+            ApplyRotation(movement);
+        
     }
 
     void ApplyRotation(Vector3 movement)
     {
         if (movement == new Vector3(0, 0, 0))
             return;
-        print(Vector2.Angle(Vector2.up, new Vector2(movement.x, movement.z)));
-        Quaternion rotation = Quaternion.Euler(0, Vector3.Angle(Vector3.forward, movement) * Mathf.Sign(Vector3.Dot(Vector3.right, movement)), 0);
-        transform.rotation = rotation;
+        movement.y = 0;
+        Quaternion rot = new Quaternion();
+        rot.SetLookRotation(movement);
+        transform.rotation = rot;
     }
 }
