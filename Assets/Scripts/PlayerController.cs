@@ -10,8 +10,41 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5.0f;
     public float gravity = -9.81f;
 
+    public enum ControllerType { WASD, ARROW_KEYS, CONTROLLER1, CONTROLLER2 };
+    public ControllerType controller;
+
+    private string xAxis;
+    private string yAxis;
+    private string trigger;
+
     void Start()
     {
+        switch(controller)
+        {
+            case ControllerType.WASD:
+                xAxis = "WASDHorizontal";
+                yAxis = "WASDVertical";
+                trigger = "WASDTrigger";
+                break;
+            case ControllerType.ARROW_KEYS:
+                xAxis = "ArrowKeysHorizontal";
+                yAxis = "ArrowKeysVertical";
+                trigger = "ArrowKeysTrigger";
+                break;
+            case ControllerType.CONTROLLER1:
+                xAxis = "Controller1Horizontal";
+                yAxis = "Controller1Vertical";
+                trigger = "Controller1Trigger";
+                break;
+            case ControllerType.CONTROLLER2:
+                xAxis = "Controller2Horizontal";
+                yAxis = "Controller2Vertical";
+                trigger = "Controller2Trigger";
+                break;
+            default:
+                break;
+        }
+
         print(transform.rotation);
         characterController = GetComponent<CharacterController>();
     }
@@ -21,13 +54,13 @@ public class PlayerController : MonoBehaviour
     {
         ProcessMovementInputs();
 
-        print("Controller " + controllerNumber + " VALUE: " + Input.GetAxis("Controller" + controllerNumber + "Trigger").ToString());
+        print("Controller " + controller.ToString() + " VALUE: " + Input.GetAxis(trigger).ToString());
     }
 
     void ProcessMovementInputs()
     {
-        float horizontalInput = Input.GetAxisRaw("Controller" + controllerNumber + "Horizontal");
-        float verticalInput = Input.GetAxisRaw("Controller" + controllerNumber + "Vertical");
+        float horizontalInput = Input.GetAxisRaw(xAxis);
+        float verticalInput = Input.GetAxisRaw(yAxis);
 
         ApplyTranslation(horizontalInput, verticalInput);
     }
