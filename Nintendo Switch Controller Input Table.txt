@@ -1,0 +1,19 @@
+joystick button 0 - y
+joystick button 1 - b
+joystick button 2 - a
+joystick button 3 - x
+joystick button 4 - left bumper
+joystick button 5 - right bumper
+joystick button 6 - left trigger
+joystick button 7 - right trigger
+joystick button 8 - minus
+joystick button 9 - plus
+joystick button 10 - left joystick down
+jotstick button 11 - right joystick down
+joystick button 12 - home button
+joystick button 13 - screenshot button
+
+joystick axis 3 - right joystick x
+joystick axis 4 - right joystick y
+joystick axis 5 - d-pad x
+joystick axis 6 - d-pad y
