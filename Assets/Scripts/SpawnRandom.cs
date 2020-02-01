@@ -34,11 +34,13 @@ public class SpawnRandom : MonoBehaviour
 
  public void SpawnInside(GameObject spawnObject){
          Vector3 randpos = Vector3.zero;
+         Quaternion rot = Quaternion.Euler(0, Random.Range(0, 360), 0);
          randpos.x = Random.Range(-x_dim/2f, x_dim/2f);//assume mesh of the plane is centered, view mesh.bounds.min.x and mesh.bounds.max.x if not centered
          randpos.y = 0f;//"level" hoy much up to the plane spawn the objects
          randpos.z = Random.Range(-z_dim/2f, z_dim/2f);
          Transform instance = Instantiate (spawnObject, this.transform).transform;
          instance.localPosition = randpos;
+         instance.rotation = rot;
          float scaleFactor = Random.Range(ScaleMin, ScaleMax);
          instance.localScale *= scaleFactor;
      }
