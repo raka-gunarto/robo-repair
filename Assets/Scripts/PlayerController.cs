@@ -8,6 +8,14 @@ public class PlayerController : MonoBehaviour
     CharacterController characterController;
 
     public float moveSpeed = 5.0f;
+
+    public enum ControllerType { WASD, ARROW_KEYS, CONTROLLER1, CONTROLLER2 };
+    public ControllerType controller;
+
+    private string xAxis;
+    private string yAxis;
+    private string trigger;
+
     public float gravity = -9.81f;
 
     public enum ControllerType { WASD, ARROW_KEYS, CONTROLLER1, CONTROLLER2 };
