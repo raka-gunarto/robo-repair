@@ -29,7 +29,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 754cd8802c0968048ae3aac95d7a87c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drops: {fileID: 8799747180707994781, guid: a3fc171e9acb12d4499005fa4cd101de, type: 3}
+  drops: {fileID: 8351117340124666979, guid: cba34e94b98f7e547a8c9eb39b41d6aa, type: 3}
 --- !u!1001 &6377425714269291600
 PrefabInstance:
   m_ObjectHideFlags: 0
