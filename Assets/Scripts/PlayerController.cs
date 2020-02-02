@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     public float moveSpeed = 15f;
     public float accelerationRate = 2f;
-    public float decelerationFactor = 0.8f;
+    public float decelerationFactor = 1.2f;
     public Boolean inertial = true;
 
     private Vector3 currentSpeed = new Vector3(0.0f, 0.0f, 0.0f);
@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     private string yAxis;
     private string trigger;
 
-    public float miningRadius = 1.5f;
+    public float miningRadius = 2.5f;
     private bool isMining = false;
     private GameObject target;
     private GameObject guiElement;
@@ -110,7 +110,12 @@ public class PlayerController : MonoBehaviour
     {
         isMining = false;
         Destroy(guiElement);
-        GetComponent<InventoryManager>().add(target);
+
+        GameObject drop = Instantiate(target.GetComponent<Mineable>().drops);
+
+        Destroy(target);
+
+        GetComponent<InventoryManager>().add(drop);
     }
 
     GameObject findClosestMineable()
