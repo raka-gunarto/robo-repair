@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     public float moveSpeed = 15f;
     public float accelerationRate = 2f;
-    public float decelerationFactor = 0.8f;
+    public float decelerationFactor = 1.2f;
     public Boolean inertial = true;
 
     private Vector3 currentSpeed = new Vector3(0.0f, 0.0f, 0.0f);
@@ -21,12 +22,20 @@ public class PlayerController : MonoBehaviour
     private string yAxis;
     private string trigger;
 
-    public float gravity = -9.81f;
+    public float miningRadius = 3f;
+    private bool isMining = false;
+    private GameObject target;
+    private GameObject guiElement;
+    private GUIHover progress;
 
+    private Sprite progressCircle;
 
+    public float gravity = -100f;
 
     void Start()
     {
+        progressCircle = Resources.Load<Sprite>("ProgressCircle");
+
         switch (controller)
         {
             case ControllerType.WASD:
@@ -53,16 +62,75 @@ public class PlayerController : MonoBehaviour
                 break;
         }
 
-        print(transform.rotation);
         characterController = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        ProcessMovementInputs();
+        if(!isMining)
+        {
+            ProcessMovementInputs();
+        }
 
-        print("Controller " + controller.ToString() + " VALUE: " + Input.GetAxis(trigger).ToString());
+        if (Input.GetAxis(trigger) == 1 && !isMining)
+        {
+            target = getClosestMineable();
+            if (target)
+            {
+
+                isMining = true;
+                moveSpeed = 0;
+
+                guiElement = new GameObject("Target");
+                guiElement.transform.SetParent(GameObject.Find("Canvas").transform);
+                ProgressCircle progressCircleComponent = guiElement.AddComponent<ProgressCircle>();
+                progressCircleComponent.owner = this;
+                guiElement.transform.localScale = new Vector3(0.2f, 0.2f, 1);
+                Image image = guiElement.AddComponent<Image>();
+                image.fillAmount = 0;
+                image.sprite = progressCircle;
+                image.type = Image.Type.Filled;
+                image.fillOrigin = 2;
+                
+                progress = target.AddComponent<GUIHover>();
+                progress.image = image;
+            }
+        }
+        else if(isMining && Input.GetAxis(trigger) != 1)
+        {
+            isMining = false;
+            Destroy(guiElement);
+            Destroy(progress);
+        }
+        
+    }
+
+    public void finishMining()
+    {
+        isMining = false;
+        Destroy(guiElement);
+        Destroy(progress);
+
+        GameObject drop = Instantiate(target.GetComponent<Mineable>().drops);
+
+        Destroy(target);
+
+        GetComponent<InventoryManager>().add(drop);
+    }
+
+    GameObject getClosestMineable()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(gameObject.transform.position, miningRadius);
+        for(int i = 0; i < hitColliders.Length; i++)
+        {
+            if(hitColliders[i].GetComponent<Mineable>())
+            {
+                return hitColliders[i].gameObject;
+            }
+        }
+
+        return null;
     }
 
     void ProcessMovementInputs()
@@ -101,6 +169,11 @@ public class PlayerController : MonoBehaviour
                 ApplyRotation(movement);
         }
 
+        if(transform.position.y < -30)
+        {
+            transform.position = new Vector3(5f, 20f, 5f);
+        }
+
     }
 
     void ApplyRotation(Vector3 movement)
@@ -111,5 +184,19 @@ public class PlayerController : MonoBehaviour
         Quaternion rot = new Quaternion();
         rot.SetLookRotation(movement);
         transform.rotation = rot;
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.name.Contains("Player"))
+        {
+            hit.gameObject.GetComponent<InventoryManager>().dropAll();
+            GetComponent<InventoryManager>().dropAll();
+        }
+    }
+
+    public Vector3 getVelocity()
+    {
+        return this.currentSpeed;
     }
 }

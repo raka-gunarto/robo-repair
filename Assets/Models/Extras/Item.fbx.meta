@@ -1,77 +1,20 @@
 fileFormatVersion: 2
-guid: e99c233cbc83bfa4ca4f4568fa0079a8
+guid: 32525be323fb6b94589159f181f7cde8
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Cube.001
-    100004: Cube.002
-    100006: Cube.004
-    100008: Cube.005
-    100010: Cube.006
-    100012: Cylinder.008
-    100014: Cylinder.009
-    100016: Elbow Joint.000
     400000: //RootNode
-    400002: Cube.001
-    400004: Cube.002
-    400006: Cube.004
-    400008: Cube.005
-    400010: Cube.006
-    400012: Cylinder.008
-    400014: Cylinder.009
-    400016: Elbow Joint.000
-    2100000: Tracks
-    2100002: Colour
-    2100004: Material.001
-    2300000: Cube.001
-    2300002: Cube.002
-    2300004: Cube.004
-    2300006: Cube.005
-    2300008: Cube.006
-    2300010: Cylinder.008
-    2300012: Cylinder.009
-    2300014: Elbow Joint.000
-    3300000: Cube.001
-    3300002: Cube.002
-    3300004: Cube.004
-    3300006: Cube.005
-    3300008: Cube.006
-    3300010: Cylinder.008
-    3300012: Cylinder.009
-    3300014: Elbow Joint.000
-    4300000: Cube.001
-    4300002: Cube.002
-    4300004: Cube.004
-    4300006: Cube.005
-    4300008: Cylinder.008
-    4300010: Cube.006
-    4300012: Cylinder.009
-    4300014: Elbow Joint.000
-    6400000: Cube.001
-    6400002: Cube.002
-    6400004: Cube.004
-    6400006: Cube.005
-    6400008: Cube.006
-    6400010: Cylinder.008
-    6400012: Cylinder.009
-    6400014: Elbow Joint.000
+    2100000: No Name
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Icosphere
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Colour
-    second: {fileID: 2100000, guid: 86ba3980919783445be936fd38a6fb30, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: 4e8910bf584b9e44caf7ba3e8163c8b3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tracks
-    second: {fileID: 2100000, guid: ef2a6d5d79d00014fa85350a0accbf1a, type: 2}
+      name: No Name
+    second: {fileID: 2100000, guid: c611155e2634f7848bcc2d9b4d34d14a, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -102,16 +45,16 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.8
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
