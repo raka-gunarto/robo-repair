@@ -140,6 +140,47 @@ public class BigRobotBuilder : MonoBehaviour
         if (other.gameObject != builder) return;
 
         // TODO: check it actually has the part
+        BigRobotProgressManager pMan = GetComponent<BigRobotProgressManager>();
+        Dictionary<string, int> partsNeeded = pMan.partsRequirementsProgression[pMan.GetProgress()];
+        Dictionary<string, int> partsCounter = new Dictionary<string, int>()
+        {
+            {"Iron", 0 },
+            {"Copper", 0 },
+            {"Wood", 0 }
+        };
+
+        foreach(GameObject obj in other.GetComponent<InventoryManager>().inventory)
+        {
+            if (obj.name.Contains("Iron"))
+                partsCounter["Iron"]++;
+            if (obj.name.Contains("Copper"))
+                partsCounter["Copper"]++;
+            if (obj.name.Contains("Wood"))
+                partsCounter["Wood"]++;
+        }
+
+        foreach(KeyValuePair<string, int> inventoryStack in partsCounter)
+        {
+            if (inventoryStack.Value < partsNeeded[inventoryStack.Key])
+                return;
+        }
+
+        foreach (KeyValuePair<string, int> inventoryStack in partsNeeded)
+        {
+            for(int i = 0; i < inventoryStack.Value; i++)
+            {
+                foreach(GameObject obj in other.GetComponent<InventoryManager>().inventory)
+                {
+                    if (obj.name.Contains(inventoryStack.Key))
+                    {
+                        other.GetComponent<InventoryManager>().inventory.Remove(obj);
+                        Destroy(obj);
+                        break;
+                    }
+                }
+            }
+        }
+
         gameObject.GetComponent<BigRobotProgressManager>().ProgressForward();
     }
 }
