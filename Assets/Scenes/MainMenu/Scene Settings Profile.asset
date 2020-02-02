@@ -13,12 +13,30 @@ MonoBehaviour:
   m_Name: Scene Settings Profile
   m_EditorClassIdentifier: 
   components:
-  - {fileID: 114863133483644472}
-  - {fileID: 114833657517947214}
-  - {fileID: 114005874646324008}
-  - {fileID: 114203409625611050}
-  - {fileID: 114389906053069092}
---- !u!114 &114005874646324008
+  - {fileID: 114968259754067274}
+  - {fileID: 114090218705435678}
+  - {fileID: 114242373741627802}
+  - {fileID: 114806883722728620}
+--- !u!114 &114090218705435678
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d7593b3a9277ac4696b20006c21dde2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  skyType:
+    m_OverrideState: 1
+    m_Value: 2
+  fogType:
+    m_OverrideState: 1
+    m_Value: 2
+--- !u!114 &114242373741627802
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,14 +104,14 @@ MonoBehaviour:
     showEyeDropper: 1
   groundColor:
     m_OverrideState: 1
-    m_Value: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 1}
+    m_Value: {r: 0.369, g: 0.349, b: 0.341, a: 1}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
   enableSunDisk:
     m_OverrideState: 1
     m_Value: 1
---- !u!114 &114203409625611050
+--- !u!114 &114806883722728620
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,47 +167,7 @@ MonoBehaviour:
     m_Value: 0.2
     min: 0
     max: 1
---- !u!114 &114389906053069092
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f034cba68ab55e046ae1445a42f18c0e, type: 3}
-  m_Name: IndirectLightingController
-  m_EditorClassIdentifier: 
-  active: 1
-  indirectSpecularIntensity:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  indirectDiffuseIntensity:
-    m_OverrideState: 1
-    m_Value: 1.6
-    min: 0
---- !u!114 &114833657517947214
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d7593b3a9277ac4696b20006c21dde2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  skyType:
-    m_OverrideState: 1
-    m_Value: 2
-  fogType:
-    m_OverrideState: 0
-    m_Value: 2
---- !u!114 &114863133483644472
+--- !u!114 &114968259754067274
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
