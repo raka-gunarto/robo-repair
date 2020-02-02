@@ -171,7 +171,7 @@ public class PlayerController : MonoBehaviour
 
         if(transform.position.y < -30)
         {
-            transform.position = new Vector3(0f, 20f, 0f);
+            transform.position = new Vector3(5f, 20f, 5f);
         }
 
     }
