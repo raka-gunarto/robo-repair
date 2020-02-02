@@ -1510,6 +1510,7 @@ MonoBehaviour:
   - {fileID: 4724528255691452301, guid: 5ab2bd0bbe112144d9b24aac755700cd, type: 3}
   - {fileID: 6377425714269324016, guid: 6689cd03d5091eb40b55d246b5742e79, type: 3}
   - {fileID: 1488697949347698717, guid: 696ce35a9d4457343ba87b92e6b30291, type: 3}
+  obstructions: []
   NumberToSpawn: 50
   ScaleMin: 0.5
   ScaleMax: 1
@@ -1527,6 +1528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnablePrefabs:
   - {fileID: 100000, guid: 2066d949f81717f46b8e34a46056429f, type: 3}
+  obstructions: []
   NumberToSpawn: 150
   ScaleMin: 1
   ScaleMax: 3
@@ -1547,6 +1549,7 @@ MonoBehaviour:
   - {fileID: 6351269601784795294, guid: 00be3b1bce4a138469eb90097a0a8b0e, type: 3}
   - {fileID: 3081101376572126336, guid: cb1521fe015b45841a8374cf1c8fd227, type: 3}
   - {fileID: 2840136780607377488, guid: f71e04dd39f3f0c4b8fd6060a09841a6, type: 3}
+  obstructions: []
   NumberToSpawn: 50
   ScaleMin: 0.8
   ScaleMax: 1
@@ -4982,6 +4985,11 @@ PrefabInstance:
       propertyPath: color.b
       value: 0.5849056
       objectReference: {fileID: 0}
+    - target: {fileID: 7163158197892010870, guid: 895921f68183ca6489a40ae9ea4ce42b,
+        type: 3}
+      propertyPath: builder
+      value: 
+      objectReference: {fileID: 1947543621}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 895921f68183ca6489a40ae9ea4ce42b, type: 3}
 --- !u!4 &1993098217 stripped
