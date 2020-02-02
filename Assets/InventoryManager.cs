@@ -33,4 +33,18 @@ public class InventoryManager : MonoBehaviour
         obj.transform.parent = ground.transform;
         inventory.Remove(obj);
     }
+
+    public void dropAll()
+    {
+        for(int i = 0; i < inventory.Count; i++)
+        {
+            GameObject item = inventory[i];
+            item.transform.SetParent(GameObject.Find("ItemDrops").transform);
+            Rigidbody rigidBody = item.AddComponent<Rigidbody>();
+            rigidBody.mass = 0.1f;
+            MeshCollider collider = item.AddComponent<MeshCollider>();
+            collider.convex = true;
+        }
+        inventory.RemoveRange(0, inventory.Count);
+    }
 }
