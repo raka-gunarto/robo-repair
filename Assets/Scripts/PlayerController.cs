@@ -189,4 +189,9 @@ public class PlayerController : MonoBehaviour
             GetComponent<InventoryManager>().dropAll();
         }
     }
+
+    public Vector3 getVelocity()
+    {
+        return this.currentSpeed;
+    }
 }
