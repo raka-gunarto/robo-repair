@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
                 guiElement.transform.SetParent(GameObject.Find("Canvas").transform);
                 ProgressCircle progressCircleComponent = guiElement.AddComponent<ProgressCircle>();
                 progressCircleComponent.owner = this;
-                guiElement.transform.localScale = new Vector3(0.2f, 0.2f, 1);
+                guiElement.transform.localScale = new Vector3(0.05f, 0.05f, 1);
                 Image image = guiElement.AddComponent<Image>();
                 image.fillAmount = 0;
                 image.sprite = progressCircle;
