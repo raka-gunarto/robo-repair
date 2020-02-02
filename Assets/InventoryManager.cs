@@ -23,7 +23,8 @@ public class InventoryManager : MonoBehaviour
         // obj.transform.setParent(transform);
         obj.transform.parent = transform;
         obj.transform.localPosition = new Vector3 (0,0,0);
-        Vector3 diff = (transform.position) + (obj.transform.position) * inventory.Count;
+
+        Vector3 diff = ((obj.GetComponent<Renderer>().bounds.size) * (inventory.Count + 2));
         obj.transform.localPosition = new Vector3(obj.transform.localPosition.x, diff.y, obj.transform.localPosition.z);
         inventory.Add(obj);
     }
@@ -31,5 +32,19 @@ public class InventoryManager : MonoBehaviour
     void remove(GameObject obj){
         obj.transform.parent = ground.transform;
         inventory.Remove(obj);
+    }
+
+    public void dropAll()
+    {
+        for(int i = 0; i < inventory.Count; i++)
+        {
+            GameObject item = inventory[i];
+            item.transform.SetParent(GameObject.Find("ItemDrops").transform);
+            Rigidbody rigidBody = item.AddComponent<Rigidbody>();
+            rigidBody.mass = 0.1f;
+            MeshCollider collider = item.AddComponent<MeshCollider>();
+            collider.convex = true;
+        }
+        inventory.RemoveRange(0, inventory.Count);
     }
 }

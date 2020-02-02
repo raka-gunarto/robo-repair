@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 754cd8802c0968048ae3aac95d7a87c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drops: {fileID: 8799747180707994781, guid: a3fc171e9acb12d4499005fa4cd101de, type: 3}
 --- !u!1001 &1488697949347733181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21,7 +22,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 97779d27f1619b04fb720a209d13a618, type: 3}
       propertyPath: m_Name
-      value: Rock_06
+      value: Rock_06_Mineable
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 97779d27f1619b04fb720a209d13a618, type: 3}
       propertyPath: m_LocalPosition.x

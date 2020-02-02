@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     public float moveSpeed = 15f;
     public float accelerationRate = 2f;
-    public float decelerationFactor = 0.8f;
+    public float decelerationFactor = 1.2f;
     public Boolean inertial = true;
 
     private Vector3 currentSpeed = new Vector3(0.0f, 0.0f, 0.0f);
@@ -22,10 +22,11 @@ public class PlayerController : MonoBehaviour
     private string yAxis;
     private string trigger;
 
-    public float miningRadius = 1.5f;
+    public float miningRadius = 3f;
     private bool isMining = false;
     private GameObject target;
     private GameObject guiElement;
+    private GUIHover progress;
 
     private Sprite progressCircle;
 
@@ -74,14 +75,12 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetAxis(trigger) == 1 && !isMining)
         {
-
-            isMining = true;
-
-            print("Looking for mineable");
-            target = findClosestMineable();
+            target = getClosestMineable();
             if (target)
             {
-                print("Found mineable!");
+
+                isMining = true;
+                moveSpeed = 0;
 
                 guiElement = new GameObject("Target");
                 guiElement.transform.SetParent(GameObject.Find("Canvas").transform);
@@ -94,14 +93,15 @@ public class PlayerController : MonoBehaviour
                 image.type = Image.Type.Filled;
                 image.fillOrigin = 2;
                 
-                GUIHover hover = target.AddComponent<GUIHover>();
-                hover.image = image;
+                progress = target.AddComponent<GUIHover>();
+                progress.image = image;
             }
         }
         else if(isMining && Input.GetAxis(trigger) != 1)
         {
             isMining = false;
             Destroy(guiElement);
+            Destroy(progress);
         }
         
     }
@@ -110,10 +110,16 @@ public class PlayerController : MonoBehaviour
     {
         isMining = false;
         Destroy(guiElement);
-        GetComponent<InventoryManager>().add(target);
+        Destroy(progress);
+
+        GameObject drop = Instantiate(target.GetComponent<Mineable>().drops);
+
+        Destroy(target);
+
+        GetComponent<InventoryManager>().add(drop);
     }
 
-    GameObject findClosestMineable()
+    GameObject getClosestMineable()
     {
         Collider[] hitColliders = Physics.OverlapSphere(gameObject.transform.position, miningRadius);
         for(int i = 0; i < hitColliders.Length; i++)
@@ -173,5 +179,14 @@ public class PlayerController : MonoBehaviour
         Quaternion rot = new Quaternion();
         rot.SetLookRotation(movement);
         transform.rotation = rot;
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.name.Contains("Player"))
+        {
+            hit.gameObject.GetComponent<InventoryManager>().dropAll();
+            GetComponent<InventoryManager>().dropAll();
+        }
     }
 }
