@@ -16,12 +16,54 @@ public class BigRobotProgressManager : MonoBehaviour
         "Docking Door"
     };
 
+    public Dictionary<string, int>[] partsRequirementsProgression =
+    {
+        new Dictionary<string, int>()
+        {
+            {"Iron", 6 },
+            {"Copper", 2 },
+            {"Wood", 2 }
+        },
+        new Dictionary<string, int>()
+        {
+            {"Iron", 10 },
+            {"Copper", 5 },
+        },
+        new Dictionary<string, int>()
+        {
+            {"Iron", 3 },
+        },
+        new Dictionary<string, int>()
+        {
+            {"Iron", 4 },
+        },
+        new Dictionary<string, int>()
+        {
+            {"Iron", 10 },
+            {"Copper", 5 },
+            {"Wood", 5 }
+        },
+        new Dictionary<string, int>()
+        {
+            {"Iron", 4 },
+            {"Copper", 2 },
+        },
+        new Dictionary<string, int>()
+        {
+            {"Iron", 1 },
+            {"Copper", 1 },
+            {"Wood", 1 }
+        }
+    };
+
     // Start is called before the first frame update
     void Start()
     {
         foreach(MeshRenderer mRender in gameObject.GetComponentsInChildren<MeshRenderer>()) 
             mRender.enabled = false;
     }
+
+    public int GetProgress() { return _progress;  }
 
     // Called when correct part is supplied
     public void ProgressForward()

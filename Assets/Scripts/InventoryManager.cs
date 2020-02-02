@@ -8,7 +8,7 @@ public class InventoryManager : MonoBehaviour
     public float explosiveness = 12;
 
     public Transform ground;
-    List<GameObject> inventory = new List<GameObject>();
+    public List<GameObject> inventory = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
