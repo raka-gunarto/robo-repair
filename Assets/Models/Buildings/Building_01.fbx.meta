@@ -10,6 +10,9 @@ ModelImporter:
     100008: Cube.018
     100010: IVY_Curve
     100012: IvyLeaf
+    100014: Cube.019
+    100016: Cube.020
+    100018: Cube.021
     400000: //RootNode
     400002: Cube.006
     400004: Cube.008
@@ -17,6 +20,9 @@ ModelImporter:
     400008: Cube.018
     400010: IVY_Curve
     400012: IvyLeaf
+    400014: Cube.019
+    400016: Cube.020
+    400018: Cube.021
     2100000: Material.002
     2100002: Material.001
     2100004: No Name
@@ -27,6 +33,9 @@ ModelImporter:
     2300008: Cube.018
     2300010: IVY_Curve
     2300012: IvyLeaf
+    2300014: Cube.019
+    2300016: Cube.020
+    2300018: Cube.021
     3300000: //RootNode
     3300002: Cube.006
     3300004: Cube.008
@@ -34,18 +43,27 @@ ModelImporter:
     3300008: Cube.018
     3300010: IVY_Curve
     3300012: IvyLeaf
+    3300014: Cube.019
+    3300016: Cube.020
+    3300018: Cube.021
     4300000: Cube.006
     4300002: Cube.008
     4300004: Cube.016
     4300006: Cube.018
     4300008: IVY_Curve
     4300010: IvyLeaf
+    4300012: Cube.019
+    4300014: Cube.020
+    4300016: Cube.021
     6400000: Cube.006
     6400002: Cube.008
     6400004: Cube.016
     6400006: Cube.018
     6400008: IVY_Curve
     6400010: IvyLeaf
+    6400012: Cube.019
+    6400014: Cube.020
+    6400016: Cube.021
     2186277476908879412: ImportLogs
   externalObjects:
   - first:
@@ -98,7 +116,7 @@ ModelImporter:
     addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 0
-    importBlendShapes: 1
+    importBlendShapes: 0
     importCameras: 0
     importLights: 0
     swapUVChannels: 0
