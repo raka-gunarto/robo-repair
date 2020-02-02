@@ -171,6 +171,11 @@ public class PlayerController : MonoBehaviour
                 ApplyRotation(movement);
         }
 
+        if(transform.position.y < -30)
+        {
+            transform.position = new Vector3(5f, 20f, 5f);
+        }
+
     }
 
     void ApplyRotation(Vector3 movement)
