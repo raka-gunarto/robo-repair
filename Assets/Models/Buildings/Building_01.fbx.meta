@@ -6,21 +6,46 @@ ModelImporter:
     100000: //RootNode
     100002: Cube.006
     100004: Cube.008
+    100006: Cube.016
+    100008: Cube.018
+    100010: IVY_Curve
+    100012: IvyLeaf
     400000: //RootNode
     400002: Cube.006
     400004: Cube.008
+    400006: Cube.016
+    400008: Cube.018
+    400010: IVY_Curve
+    400012: IvyLeaf
     2100000: Material.002
     2100002: Material.001
+    2100004: No Name
     2300000: //RootNode
     2300002: Cube.006
     2300004: Cube.008
+    2300006: Cube.016
+    2300008: Cube.018
+    2300010: IVY_Curve
+    2300012: IvyLeaf
     3300000: //RootNode
     3300002: Cube.006
     3300004: Cube.008
+    3300006: Cube.016
+    3300008: Cube.018
+    3300010: IVY_Curve
+    3300012: IvyLeaf
     4300000: Cube.006
     4300002: Cube.008
+    4300004: Cube.016
+    4300006: Cube.018
+    4300008: IVY_Curve
+    4300010: IvyLeaf
     6400000: Cube.006
     6400002: Cube.008
+    6400004: Cube.016
+    6400006: Cube.018
+    6400008: IVY_Curve
+    6400010: IvyLeaf
     2186277476908879412: ImportLogs
   externalObjects:
   - first:
@@ -33,6 +58,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Material.002
     second: {fileID: 2100000, guid: ef2a6d5d79d00014fa85350a0accbf1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 9159469c248171548a715b2bed00fe7b, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
