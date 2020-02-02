@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.061481766, g: 0.084273286, b: 0.12794101, a: 1}
+  m_IndirectSpecularColor: {r: 0.061438717, g: 0.08421308, b: 0.12785137, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -523,7 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f326558ec7413ed4498f73c99c95f3a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosiveness: 50
+  explosiveness: 12
   ground: {fileID: 0}
 --- !u!4 &70259532 stripped
 Transform:
@@ -1168,7 +1168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f326558ec7413ed4498f73c99c95f3a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosiveness: 50
+  explosiveness: 12
   ground: {fileID: 0}
 --- !u!4 &218683376 stripped
 Transform:
@@ -2195,12 +2195,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5e06dfcc32eb254bb8e0643f618a972, type: 3}
---- !u!4 &450843409 stripped
+--- !u!4 &450843409
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 5278337674555780844, guid: 6de124cb775405e42ab7fa71cc69e0dc,
     type: 3}
   m_PrefabInstance: {fileID: 504464534}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622557371}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1541298199}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &473615169 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: bcea9822433948a4e8cd2ed09931f8bb,
@@ -2905,7 +2914,7 @@ Transform:
   - {fileID: 1098777187}
   - {fileID: 1528992463}
   - {fileID: 1714744672}
-  - {fileID: 450843409}
+  - {fileID: 1541298199}
   - {fileID: 782784286}
   - {fileID: 100606120}
   - {fileID: 1702265156}
@@ -4590,7 +4599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f326558ec7413ed4498f73c99c95f3a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosiveness: 50
+  explosiveness: 12
   ground: {fileID: 0}
 --- !u!1001 &1193839634
 PrefabInstance:
@@ -5566,6 +5575,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 379082533}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1541298198
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 504464534}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1541298199}
+  m_Layer: 0
+  m_Name: Big_robot 2 (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1541298199
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 504464534}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541298198}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 450843409}
+  m_Father: {fileID: 696233602}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1553898971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5793,6 +5833,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1519397605}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1622557371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 504464534}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 450843409}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1001 &1640711501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6418,7 +6474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f326558ec7413ed4498f73c99c95f3a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosiveness: 50
+  explosiveness: 12
   ground: {fileID: 0}
 --- !u!4 &2001880582 stripped
 Transform:
