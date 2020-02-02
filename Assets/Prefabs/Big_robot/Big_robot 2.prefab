@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4149567024750961937}
   - component: {fileID: 4149567024747570483}
   - component: {fileID: 4149567024748668915}
+  - component: {fileID: 7321755434697944159}
   m_Layer: 0
   m_Name: Arms
   m_TagString: Untagged
@@ -77,6 +78,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &7321755434697944159
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4149567024750868785}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300010, guid: e99c233cbc83bfa4ca4f4568fa0079a8, type: 3}
 --- !u!1 &4149567024750868787
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,6 +103,7 @@ GameObject:
   - component: {fileID: 4149567024750961939}
   - component: {fileID: 4149567024747570493}
   - component: {fileID: 4149567024748668925}
+  - component: {fileID: 2999141458461157473}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -154,6 +170,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2999141458461157473
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4149567024750868787}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300006, guid: e99c233cbc83bfa4ca4f4568fa0079a8, type: 3}
 --- !u!1 &4149567024750868789
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,6 +195,7 @@ GameObject:
   - component: {fileID: 4149567024750961941}
   - component: {fileID: 4149567024747570487}
   - component: {fileID: 4149567024748668919}
+  - component: {fileID: 4091540394510124829}
   m_Layer: 0
   m_Name: Arm Cannons
   m_TagString: Untagged
@@ -231,6 +262,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &4091540394510124829
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4149567024750868789}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300012, guid: e99c233cbc83bfa4ca4f4568fa0079a8, type: 3}
 --- !u!1 &4149567024750868791
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,6 +287,7 @@ GameObject:
   - component: {fileID: 4149567024750961943}
   - component: {fileID: 4149567024747570481}
   - component: {fileID: 4149567024748668913}
+  - component: {fileID: 6377359867406941715}
   m_Layer: 0
   m_Name: Main Cannon
   m_TagString: Untagged
@@ -308,6 +354,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6377359867406941715
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4149567024750868791}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300008, guid: e99c233cbc83bfa4ca4f4568fa0079a8, type: 3}
 --- !u!1 &4149567024750868793
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,6 +379,7 @@ GameObject:
   - component: {fileID: 4149567024750961945}
   - component: {fileID: 4149567024747570491}
   - component: {fileID: 4149567024748668923}
+  - component: {fileID: 4666682815768976137}
   m_Layer: 0
   m_Name: Tracks
   m_TagString: Untagged
@@ -386,6 +447,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &4666682815768976137
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4149567024750868793}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: e99c233cbc83bfa4ca4f4568fa0079a8, type: 3}
 --- !u!1 &4149567024750868797
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +472,7 @@ GameObject:
   - component: {fileID: 4149567024750961949}
   - component: {fileID: 4149567024747570495}
   - component: {fileID: 4149567024748668927}
+  - component: {fileID: 412583947758622023}
   m_Layer: 0
   m_Name: Docking Door
   m_TagString: Untagged
@@ -465,6 +541,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &412583947758622023
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4149567024750868797}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300004, guid: e99c233cbc83bfa4ca4f4568fa0079a8, type: 3}
 --- !u!1 &4149567024750868799
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +566,7 @@ GameObject:
   - component: {fileID: 4149567024750961951}
   - component: {fileID: 4149567024747570489}
   - component: {fileID: 4149567024748668921}
+  - component: {fileID: 4755465863488549709}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -544,6 +635,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &4755465863488549709
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4149567024750868799}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300002, guid: e99c233cbc83bfa4ca4f4568fa0079a8, type: 3}
 --- !u!1 &5278337674555617996
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,6 +660,7 @@ GameObject:
   - component: {fileID: 5278337674555780844}
   - component: {fileID: 1646624812264624354}
   - component: {fileID: 2052761737629911730}
+  - component: {fileID: 3934397247288825549}
   m_Layer: 0
   m_Name: Big_robot 2
   m_TagString: Untagged
@@ -616,6 +722,19 @@ MonoBehaviour:
   - Main Cannon
   - Arm Cannons
   - Docking Door
+--- !u!65 &3934397247288825549
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5278337674555617996}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12, y: 12, z: 12}
+  m_Center: {x: 0, y: 3, z: 0}
 --- !u!1 &5278337674555618012
 GameObject:
   m_ObjectHideFlags: 0
