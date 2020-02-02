@@ -39,6 +39,23 @@ public class InventoryManager : MonoBehaviour
         inventory.Remove(obj);
     }
 
+    public void redoStack()
+    {
+        for(int i = 0; i < inventory.Count; i++)
+        {
+            GameObject obj = inventory[i];
+
+            obj.transform.parent = transform;
+            obj.transform.position = transform.position;
+            obj.transform.localPosition = new Vector3(0, 0, 0);
+
+            //Vector3 size = obj.GetComponent<Renderer>().bounds.size;
+            Vector3 size = new Vector3(1f, 1f, 1f);
+            Vector3 diff = (size * (i + 2));
+            obj.transform.localPosition = new Vector3(obj.transform.localPosition.x, diff.y, obj.transform.localPosition.z);
+        }
+    }
+
     public void dropAll()
     {
         Vector3 currentVelocity = GetComponent<PlayerController>().getVelocity();

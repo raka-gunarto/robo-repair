@@ -183,6 +183,8 @@ public class BigRobotBuilder : MonoBehaviour
             }
         }
 
+        other.GetComponent<InventoryManager>().redoStack();
+
         gameObject.GetComponent<BigRobotProgressManager>().ProgressForward();
     }
 }
