@@ -192,15 +192,13 @@ public class PlayerController : MonoBehaviour
     {
         if (hit.gameObject.name.Contains("Player"))
         {
-            //hit.gameObject.GetComponent<InventoryManager>().dropAll();
+            hit.gameObject.GetComponent<InventoryManager>().dropAll();
             GetComponent<InventoryManager>().dropAll();
         }
 
-        else if (
-            hit.gameObject.GetComponent<Pickupable>() &&
+        else if (hit.gameObject.GetComponent<Pickupable>() &&
             hit.gameObject.GetComponent<Pickupable>().enabled &&
-            Vector3.Magnitude(hit.rigidbody.velocity) < 1
-            )
+            Vector3.Magnitude(hit.rigidbody.velocity) < 1)
         {
             hit.gameObject.GetComponent<Pickupable>().enabled = false;
 
