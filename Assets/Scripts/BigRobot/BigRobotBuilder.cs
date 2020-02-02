@@ -34,22 +34,17 @@ public class BigRobotBuilder : MonoBehaviour
     Text ironTextComponent;
     Text copperTextComponent;
 
+    private Dictionary<string, int>[] partsRequirementsProgression;
+
     private Font font;
 
     // Start is called before the first frame update
     void Start()
     {
+        partsRequirementsProgression = GetComponent<BigRobotProgressManager>().partsRequirementsProgression;
+
         Canvas canvas = GameObject.FindObjectOfType<Canvas>();
         float scaleFactor = canvas.scaleFactor * 0.6f;
-
-        partRequirements = new List<List<int>>();
-        partRequirements.Add(new List<int>() { 2, 3, 2 });
-        partRequirements.Add(new List<int>() { 0, 5, 5 });
-        partRequirements.Add(new List<int>() { 0, 3, 0 });
-        partRequirements.Add(new List<int>() { 0, 4, 0 });
-        partRequirements.Add(new List<int>() { 4, 4, 4 });
-        partRequirements.Add(new List<int>() { 0, 4, 2 });
-        partRequirements.Add(new List<int>() { 1, 1, 1 });
 
         canvasGroup = new GameObject();
         canvasGroup.transform.parent = GameObject.Find("Canvas").transform;
@@ -103,21 +98,21 @@ public class BigRobotBuilder : MonoBehaviour
         textComponent.GetComponent<RectTransform>().sizeDelta = new Vector2(25 * scaleFactor, 25 * scaleFactor);
         textComponent.alignment = TextAnchor.MiddleLeft;
 
-        woodTextComponent.text = partRequirements[progressIndex][0].ToString();
+        woodTextComponent.text = partsRequirementsProgression[progressIndex]["Wood"].ToString();
         woodTextComponent.font = font;
         woodTextComponent.color = color;
         woodTextComponent.fontSize = (int)(fontSize * scaleFactor);
         woodTextComponent.GetComponent<RectTransform>().sizeDelta = new Vector2(25 * scaleFactor, 25 * scaleFactor);
         woodTextComponent.alignment = TextAnchor.MiddleLeft;
 
-        ironTextComponent.text = partRequirements[progressIndex][1].ToString();
+        ironTextComponent.text = partsRequirementsProgression[progressIndex]["Iron"].ToString();
         ironTextComponent.font = font;
         ironTextComponent.color = color;
         ironTextComponent.fontSize = (int)(fontSize * scaleFactor);
         ironTextComponent.GetComponent<RectTransform>().sizeDelta = new Vector2(25 * scaleFactor, 25 * scaleFactor);
         ironTextComponent.alignment = TextAnchor.MiddleLeft;
 
-        copperTextComponent.text = partRequirements[progressIndex][2].ToString();
+        copperTextComponent.text = partsRequirementsProgression[progressIndex]["Copper"].ToString();
         copperTextComponent.font = font;
         copperTextComponent.color = color;
         copperTextComponent.fontSize = (int)(fontSize * scaleFactor);
@@ -136,9 +131,10 @@ public class BigRobotBuilder : MonoBehaviour
     public void progress()
     {
         progressIndex++;
-        woodTextComponent.text   = partRequirements[progressIndex][0].ToString();
-        ironTextComponent.text   = partRequirements[progressIndex][1].ToString();
-        copperTextComponent.text = partRequirements[progressIndex][2].ToString();
+        
+        woodTextComponent.text   = partsRequirementsProgression[progressIndex]["Wood"].ToString();
+        ironTextComponent.text   = partsRequirementsProgression[progressIndex]["Iron"].ToString();
+        copperTextComponent.text = partsRequirementsProgression[progressIndex]["Copper"].ToString();
     }
 
     private void OnTriggerEnter(Collider other)
