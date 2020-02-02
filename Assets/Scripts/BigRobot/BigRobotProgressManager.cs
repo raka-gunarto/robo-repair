@@ -28,14 +28,19 @@ public class BigRobotProgressManager : MonoBehaviour
         {
             {"Iron", 3 },
             {"Copper", 1 },
+            {"Wood", 0 }
         },
         new Dictionary<string, int>()
         {
             {"Iron", 2 },
+            {"Copper", 0 },
+            {"Wood", 0 }
         },
         new Dictionary<string, int>()
         {
+            {"Iron", 0 },
             {"Copper", 2 },
+            {"Wood", 0 }
         },
         new Dictionary<string, int>()
         {
@@ -45,8 +50,9 @@ public class BigRobotProgressManager : MonoBehaviour
         },
         new Dictionary<string, int>()
         {
-            {"Wood", 4 },
+            {"Iron", 0 },
             {"Copper", 2 },
+            {"Wood", 4 }
         },
         new Dictionary<string, int>()
         {
