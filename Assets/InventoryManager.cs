@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    
+
+    public float explosiveness = 50;
+
     public Transform ground;
     List<GameObject> inventory = new List<GameObject>();
     // Start is called before the first frame update
@@ -36,12 +38,21 @@ public class InventoryManager : MonoBehaviour
 
     public void dropAll()
     {
-        for(int i = 0; i < inventory.Count; i++)
+        Vector3 currentVelocity = GetComponent<PlayerController>().getVelocity();
+        for (int i = 0; i < inventory.Count; i++)
         {
             GameObject item = inventory[i];
             item.transform.SetParent(GameObject.Find("ItemDrops").transform);
             Rigidbody rigidBody = item.AddComponent<Rigidbody>();
             rigidBody.mass = 0.1f;
+            rigidBody.velocity = currentVelocity;
+
+            rigidBody.velocity.Set( 
+                currentVelocity.x * Random.Range(0.3f, 15f) + Random.Range(-explosiveness, explosiveness),
+                currentVelocity.y * Random.Range(0.3f, 15f) + Random.Range(-explosiveness, explosiveness),
+                currentVelocity.z * Random.Range(0.3f, 15f) + Random.Range(-explosiveness, explosiveness)
+            );
+
             MeshCollider collider = item.AddComponent<MeshCollider>();
             collider.convex = true;
         }
