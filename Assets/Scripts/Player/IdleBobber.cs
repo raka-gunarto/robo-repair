@@ -12,7 +12,7 @@ public class IdleBobber : MonoBehaviour
 
     private bool Up = true;
 
-    public float BobbingSpeed = 1.0f;
+    public float BobbingSpeed = 4.0f;
     void Update()
     {
         if (transform.localPosition == TargetTransform)
