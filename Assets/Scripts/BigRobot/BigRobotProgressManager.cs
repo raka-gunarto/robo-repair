@@ -68,6 +68,8 @@ public class BigRobotProgressManager : MonoBehaviour
     // Called when correct part is supplied
     public void ProgressForward()
     {
+        GetComponent<BigRobotBuilder>().progress();
+
         _progress += 1;
         foreach(MeshRenderer parentRenderer in gameObject.GetComponentsInChildren<MeshRenderer>(true))
         {
