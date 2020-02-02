@@ -24,6 +24,7 @@ public class BigRobotBuilder : MonoBehaviour
     private GameObject ironItem;
     private GameObject copperItem;
 
+    private float fontSize = 8;
     private GameObject text;
     private GameObject woodText;
     private GameObject ironText;
@@ -34,6 +35,9 @@ public class BigRobotBuilder : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Canvas canvas = GameObject.FindObjectOfType<Canvas>();
+        float scaleFactor = canvas.scaleFactor * 0.7f;
+
         partRequirements = new List<List<int>>();
         partRequirements.Add(new List<int>() { 1, 2, 3 });
         partRequirements.Add(new List<int>() { 2, 2, 2 });
@@ -45,7 +49,7 @@ public class BigRobotBuilder : MonoBehaviour
 
         canvasGroup = new GameObject();
         canvasGroup.transform.parent = GameObject.Find("Canvas").transform;
-        canvasGroup.transform.position = initialUIPosition;
+        canvasGroup.transform.position = initialUIPosition * scaleFactor;
 
         woodItemIcon   = Resources.Load<Sprite>("Icons/Wood");
         ironItemIcon   = Resources.Load<Sprite>("Icons/Iron");
@@ -70,14 +74,14 @@ public class BigRobotBuilder : MonoBehaviour
         copperItem.transform.parent = canvasGroup.transform;
 
 
-        text.transform.localPosition        = new Vector2(4, 0);
-        woodText.transform.localPosition = new Vector2(27, 0);
-        ironText.transform.localPosition = new Vector2(60, 0);
-        copperText.transform.localPosition = new Vector2(90, 0);
+        text.transform.localPosition        = new Vector2(4 * scaleFactor, 0);
+        woodText.transform.localPosition = new Vector2(27 * scaleFactor, 0);
+        ironText.transform.localPosition = new Vector2(60 * scaleFactor, 0);
+        copperText.transform.localPosition = new Vector2(90 * scaleFactor, 0);
 
-        woodItem.transform.localPosition    = new Vector2(30 , 0);
-        ironItem.transform.localPosition    = new Vector2(63, 0);
-        copperItem.transform.localPosition  = new Vector2(93, 0);
+        woodItem.transform.localPosition    = new Vector2(30 * scaleFactor, 0);
+        ironItem.transform.localPosition    = new Vector2(63 * scaleFactor, 0);
+        copperItem.transform.localPosition  = new Vector2(93 * scaleFactor, 0);
 
         Text textComponent = text.AddComponent<Text>();
         Text woodTextComponent = woodText.AddComponent<Text>();
@@ -91,38 +95,38 @@ public class BigRobotBuilder : MonoBehaviour
         textComponent.text = name+":";
         textComponent.font = font;
         textComponent.color = color;
-        textComponent.fontSize = 12;
-        textComponent.GetComponent<RectTransform>().sizeDelta = new Vector2(25, 25);
+        textComponent.fontSize = (int)(fontSize * scaleFactor);
+        textComponent.GetComponent<RectTransform>().sizeDelta = new Vector2(25 * scaleFactor, 25 * scaleFactor);
         textComponent.alignment = TextAnchor.MiddleLeft;
 
         woodTextComponent.text = partRequirements[progressIndex][0].ToString();
         woodTextComponent.font = font;
         woodTextComponent.color = color;
-        woodTextComponent.fontSize = 12;
-        woodTextComponent.GetComponent<RectTransform>().sizeDelta = new Vector2(25, 25);
+        woodTextComponent.fontSize = (int)(fontSize * scaleFactor);
+        woodTextComponent.GetComponent<RectTransform>().sizeDelta = new Vector2(25 * scaleFactor, 25 * scaleFactor);
         woodTextComponent.alignment = TextAnchor.MiddleLeft;
 
         ironTextComponent.text = partRequirements[progressIndex][1].ToString();
         ironTextComponent.font = font;
         ironTextComponent.color = color;
-        ironTextComponent.fontSize = 12;
-        ironTextComponent.GetComponent<RectTransform>().sizeDelta = new Vector2(25, 25);
+        ironTextComponent.fontSize = (int)(fontSize * scaleFactor);
+        ironTextComponent.GetComponent<RectTransform>().sizeDelta = new Vector2(25 * scaleFactor, 25 * scaleFactor);
         ironTextComponent.alignment = TextAnchor.MiddleLeft;
 
         copperTextComponent.text = partRequirements[progressIndex][2].ToString();
         copperTextComponent.font = font;
         copperTextComponent.color = color;
-        copperTextComponent.fontSize = 12;
-        copperTextComponent.GetComponent<RectTransform>().sizeDelta = new Vector2(25, 25);
+        copperTextComponent.fontSize = (int)(fontSize * scaleFactor);
+        copperTextComponent.GetComponent<RectTransform>().sizeDelta = new Vector2(25 * scaleFactor, 25 * scaleFactor);
         copperTextComponent.alignment = TextAnchor.MiddleLeft;
 
         woodItemImage.sprite = woodItemIcon;
         ironItemImage.sprite = ironItemIcon;
         copperItemImage.sprite = copperItemIcon;
 
-        woodItem.transform.localScale = new Vector2(0.2f, 0.2f);
-        ironItem.transform.localScale = new Vector2(0.2f, 0.2f);
-        copperItem.transform.localScale = new Vector2(0.2f, 0.2f);
+        woodItem.transform.localScale = new Vector2(0.2f * scaleFactor, 0.2f * scaleFactor);
+        ironItem.transform.localScale = new Vector2(0.2f * scaleFactor, 0.2f * scaleFactor);
+        copperItem.transform.localScale = new Vector2(0.2f * scaleFactor, 0.2f * scaleFactor);
     }
 
     // Update is called once per frame
