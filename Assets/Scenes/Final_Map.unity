@@ -1513,7 +1513,7 @@ MonoBehaviour:
   - {fileID: 6377425714269324016, guid: 6689cd03d5091eb40b55d246b5742e79, type: 3}
   - {fileID: 1488697949347698717, guid: 696ce35a9d4457343ba87b92e6b30291, type: 3}
   obstructions: []
-  NumberToSpawn: 50
+  NumberToSpawn: 70
   ScaleMin: 0.5
   ScaleMax: 1
 --- !u!114 &429528006
@@ -1552,7 +1552,7 @@ MonoBehaviour:
   - {fileID: 3081101376572126336, guid: cb1521fe015b45841a8374cf1c8fd227, type: 3}
   - {fileID: 2840136780607377488, guid: f71e04dd39f3f0c4b8fd6060a09841a6, type: 3}
   obstructions: []
-  NumberToSpawn: 50
+  NumberToSpawn: 40
   ScaleMin: 0.8
   ScaleMax: 1
 --- !u!4 &473615169 stripped
