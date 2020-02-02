@@ -393,6 +393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosiveness: 12
   ground: {fileID: 0}
+  inventory: []
 --- !u!4 &70259532 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 79fc4b98aebe0f74f959152cb9f120f9,
@@ -769,6 +770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosiveness: 12
   ground: {fileID: 0}
+  inventory: []
 --- !u!4 &218683376 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 0eb0ed9b2dd332741bb29304728e3d35,
@@ -1511,7 +1513,7 @@ MonoBehaviour:
   - {fileID: 6377425714269324016, guid: 6689cd03d5091eb40b55d246b5742e79, type: 3}
   - {fileID: 1488697949347698717, guid: 696ce35a9d4457343ba87b92e6b30291, type: 3}
   obstructions: []
-  NumberToSpawn: 50
+  NumberToSpawn: 100
   ScaleMin: 0.5
   ScaleMax: 1
 --- !u!114 &429528006
@@ -3532,6 +3534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosiveness: 12
   ground: {fileID: 0}
+  inventory: []
 --- !u!1001 &1193839634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4893,6 +4896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosiveness: 12
   ground: {fileID: 0}
+  inventory: []
 --- !u!1001 &1993098216
 PrefabInstance:
   m_ObjectHideFlags: 0
