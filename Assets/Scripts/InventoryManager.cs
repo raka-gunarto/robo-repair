@@ -5,7 +5,7 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
 
-    public float explosiveness = 50;
+    public float explosiveness = 12;
 
     public Transform ground;
     List<GameObject> inventory = new List<GameObject>();
@@ -24,9 +24,12 @@ public class InventoryManager : MonoBehaviour
     public void add(GameObject obj){
         // obj.transform.setParent(transform);
         obj.transform.parent = transform;
+        obj.transform.position = transform.position;
         obj.transform.localPosition = new Vector3 (0,0,0);
 
-        Vector3 diff = ((obj.GetComponent<Renderer>().bounds.size) * (inventory.Count + 2));
+        //Vector3 size = obj.GetComponent<Renderer>().bounds.size;
+        Vector3 size = new Vector3(1f, 1f, 1f);
+        Vector3 diff = (size * (inventory.Count + 2));
         obj.transform.localPosition = new Vector3(obj.transform.localPosition.x, diff.y, obj.transform.localPosition.z);
         inventory.Add(obj);
     }
@@ -43,19 +46,18 @@ public class InventoryManager : MonoBehaviour
         {
             GameObject item = inventory[i];
             item.transform.SetParent(GameObject.Find("ItemDrops").transform);
-            Rigidbody rigidBody = item.AddComponent<Rigidbody>();
-            rigidBody.mass = 0.1f;
-            rigidBody.velocity = currentVelocity;
 
-            rigidBody.velocity.Set( 
-                currentVelocity.x * Random.Range(0.3f, 15f) + Random.Range(-explosiveness, explosiveness),
-                currentVelocity.y * Random.Range(0.3f, 15f) + Random.Range(-explosiveness, explosiveness),
-                currentVelocity.z * Random.Range(0.3f, 15f) + Random.Range(-explosiveness, explosiveness)
-            );
+            Rigidbody rigidBody = item.GetComponent<Rigidbody>();
 
-            MeshCollider collider = item.AddComponent<MeshCollider>();
-            collider.convex = true;
+            rigidBody.isKinematic       = false;
+            rigidBody.detectCollisions  = true;
+            rigidBody.useGravity        = true;
+
+            rigidBody.velocity = new Vector3(Random.Range(-explosiveness, explosiveness), Random.Range(0, explosiveness), Random.Range(-explosiveness, explosiveness));
+
+            item.GetComponent<Pickupable>().enabled = true;
+
         }
-        inventory.RemoveRange(0, inventory.Count);
+        inventory.Clear();
     }
 }

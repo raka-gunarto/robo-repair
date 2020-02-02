@@ -114,6 +114,8 @@ public class PlayerController : MonoBehaviour
 
         GameObject drop = Instantiate(target.GetComponent<Mineable>().drops);
 
+        drop.GetComponent<Rigidbody>().detectCollisions = false;
+
         Destroy(target);
 
         GetComponent<InventoryManager>().add(drop);
@@ -185,8 +187,23 @@ public class PlayerController : MonoBehaviour
     {
         if (hit.gameObject.name.Contains("Player"))
         {
-            hit.gameObject.GetComponent<InventoryManager>().dropAll();
+            //hit.gameObject.GetComponent<InventoryManager>().dropAll();
             GetComponent<InventoryManager>().dropAll();
+        }
+
+        else if (
+            hit.gameObject.GetComponent<Pickupable>() &&
+            hit.gameObject.GetComponent<Pickupable>().enabled &&
+            Vector3.Magnitude(hit.rigidbody.velocity) < 1
+            )
+        {
+            hit.gameObject.GetComponent<Pickupable>().enabled = false;
+
+            hit.rigidbody.isKinematic       = true;
+            hit.rigidbody.detectCollisions  = false;
+            hit.rigidbody.useGravity        = false;
+
+            GetComponent<InventoryManager>().add(hit.gameObject);
         }
     }
 
