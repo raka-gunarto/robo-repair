@@ -62,11 +62,15 @@ public class BigRobotProgressManager : MonoBehaviour
         }
     };
 
-    // Start is called before the first frame update
     void Start()
     {
+        // Disable rendering
         foreach(MeshRenderer mRender in gameObject.GetComponentsInChildren<MeshRenderer>()) 
             mRender.enabled = false;
+
+        // Disable collision
+        foreach (MeshCollider mCollider in gameObject.GetComponentsInChildren<MeshCollider>())
+            mCollider.enabled = false;
     }
 
     public int GetProgress() { return _progress;  }
@@ -83,6 +87,8 @@ public class BigRobotProgressManager : MonoBehaviour
             {
                 foreach (MeshRenderer mRender in parentRenderer.GetComponentsInChildren<MeshRenderer>())
                     mRender.enabled = true;
+
+                parentRenderer.GetComponent<MeshCollider>().enabled = true;
                 parentRenderer.GetComponent<MeshRenderer>().enabled = true;
                 break;
             }
@@ -100,6 +106,8 @@ public class BigRobotProgressManager : MonoBehaviour
             {
                 foreach (MeshRenderer mRender in parentRenderer.GetComponentsInChildren<MeshRenderer>())
                     mRender.enabled = false;
+
+                parentRenderer.GetComponent<MeshCollider>().enabled = false;
                 parentRenderer.GetComponent<MeshRenderer>().enabled = false;
                 break;
             }
